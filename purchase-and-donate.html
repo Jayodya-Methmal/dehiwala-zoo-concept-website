@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <meta name="viewport" content="width=device-width" initial-scale=1.0 >
+    <title> Dehiwala Zoo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#36a336">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <meta name="description" content="Dehiwala Zoo Website one place for all the details purchase tickets">
+    <meta name="msapplication-TileColor" content="#36a336">
+    <meta name="msapplication-config" content="images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<!-------------------------------------Header section-------------------------------------------------------->
+    <section class="sub-header-2">
+
+        <nav>
+            <a href="index.html"><img alt="logo" src="images/logo3.png"></a>
+            <div class="navigation_links" id="navigationLinks">
+                <br><i class="dz-close-r" onclick="hideMenu()"></i><br>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="animals-plants.html">Animals and Plants</a></li> 
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="purchase-and-donate.html">Purchase and Donate</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>    
+                </ul>  
+            </div>
+
+                <i class="dz-menu-boxed" onclick="showMenu()"></i>
+
+        </nav>
+        <h1> Purchase and Donate </h1>
+
+    </section>
+
+
+
+
+
+    <section class="ticket_booking">
+
+
+        <h1> Purchase Tickets</h1>
+
+        <div class="row purchase-items">
+            <div class="ticket-purchase">
+                <div class="ticket-pricing-header">
+                    <h1>Day Pass</h1>
+                </div>
+                
+                <div class="pricing-plan-details">
+                    <p class="pricing-plan-cost">LKR 1000</p>
+                    <p class="pricing-plan-text">Per Adult</p>
+                    <br>
+                    <p class="pricing-plan-cost">LKR 500</p>
+                    <p class="pricing-plan-text">Per Child</p>
+                    <br>
+                    <p class="pricing-plan-text">Conditions apply*</p>
+                </div>
+        
+        
+        
+            </div>
+            <div class="ticket-purchase">
+                <div class="ticket-pricing-header">
+                    <h1>Foreign Pass</h1>
+                </div>
+                
+                <div class="pricing-plan-details">
+                    <p class="pricing-plan-cost">LKR 5000</p>
+                    <p class="pricing-plan-text">Per Adult</p>
+                    <br>
+                    <p class="pricing-plan-cost">LKR 2500</p>
+                    <p class="pricing-plan-text">Per Child</p>
+                    <br>
+                    <p class="pricing-plan-text">Conditions apply*</p>
+                </div>
+            </div>
+        
+            <div class="ticket-purchase">
+                <div class="ticket-pricing-header">
+                    <h1>Student Pass</h1>  
+                </div>
+                
+                <div class="pricing-plan-details">
+                    <p class="pricing-plan-cost">LKR 500</p>
+                    <p class="pricing-plan-text">Per Adult</p>
+                    <br>
+                    <p class="pricing-plan-cost">LKR 250</p>
+                    <p class="pricing-plan-text">Per Child</p>
+                    <br>
+                    <p class="pricing-plan-text">Conditions apply*</p>
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+
+        
+            <div class="booking-form" id="boxform">
+                <form  class="contact-col frmtickets" id="frmPurchase">
+                   
+                    
+                    <div class="inputBox">
+                        <select name="cmbChoice" id="cmbChoice" class="select__item" onchange="calculateCost();">
+                            <option value="" selected disabled>Select Ticket Catagory</option>
+                            <option value="0">Day pass</option>
+                            <option value="1">Student pass</option>
+                            <option value="2">Foreigner Pass</option>
+                        </select>
+                    </div>
+                    <div class="inputBox">
+                        <select name="cmbDuratiom" id="cmbDuratiom" class="select__item" onchange="calculateCost();">
+                            <option value="" selected disabled>Select the duration</option>
+                            <option value="0">3 hours</option>
+                            <option value="1">½ day</option>
+                            <option value="2">full day</option>
+                            <option value="3">2 days</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flexbox" id="ticket-amounts">
+                        <div class="inputBox">  
+                        <input id="noOfAdult" name="noOfAdult" min="0" type="number" placeholder="Enter Number of Adults" onblur="calculateCost();">
+                        </div>
+                        <div class="inputBox">
+                            <input id="noOfChild" name="noOfChild" min="0" type="number" placeholder="Enter Number of Children" onblur="calculateCost();">
+                        </div>
+                    </div>
+                    <label for="date" class="lbdate">Input the check-in date.</label>
+                    <div class="inputBox">
+                        <input type="date" id="date"  name="date">
+                    </div>
+
+                    <label for="date" class=""><a href="javascript:void(0)" class=" showHide" onclick='showHide();' >Show/Hide Extra Items</a> </label>
+                    <div id="extra_items">
+                    <div class="flexbox"  >
+                        <div class="inputBox">
+                            <input id="noOfPasses" name="noOfPasses" min="0" type="number" placeholder="Enter Number of Passes" onblur="calculateCost();" >
+                        </div>
+                        <div class="inputBox">
+                            <input id="noOfTokens" name="noOfTokens" min="0" type="number" placeholder="Enter Number of Tokens" onblur="calculateCost();">
+                        </div>
+                    </div>
+                     </div>
+                    <div class="alert" style="display: none;"></div>
+                    <p id="crrntOrder">Cost of the current order : LKR <span id="spCost">0.00</span></p>
+                    <div class="" id="localStorage">
+                        <input  id="addFavourite" type="button" value="Add to favourites" class="">
+                        <input id="retriveFavourite" type="button" value="Order favourite" class="">
+                    </div>
+                        
+                    
+                    <input id="AddOrder" type="button" value="Add to Order" class="submit-btn">
+
+                    <div id="divOrder" >
+                    <table id="tbl_order" style="display: none;" >
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Adult</th>
+                                    <th>Children</th>
+                                    <th>Date</th>
+                                    <th>Duration</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_order"></tbody>
+                            <tfoot>
+                                <tr id="table_divider">
+                                    <th colspan="4">Food Tokens</th>
+                                    <th colspan="1" id="thFtokens">0</th>
+                                    <th colspan="1" id="pthFtokens">0.00</th>
+                                    <th colspan="1"><a href='javascript:void(0)' style='color:red;font-weight:bold' onclick='removeFoodTokens();'><img src ='images/trash-bin.png' id ='trashBin' alt ='trashbin' ></a></th>
+                                </tr>
+                                <tr id="">
+                                    <th colspan="4">Annual Passes</th>
+                                    <th colspan="1" id="thApasses">0</th>
+                                    <th colspan="1" id="pthApasses">0.00</th>
+                                    <th colspan="1"><a href='javascript:void(0)' style='color:red;font-weight:bold' onclick='removeAnuualPasses();'><img src ='images/trash-bin.png' id ='trashBin' alt ='trashbin' ></a></th>
+                                </tr>
+                                <tr id="table_divider-final">
+                                    <th colspan="4">Grand Total</th>
+                                    <th colspan="2" style="text-align: center;"> LKR <span id="thGrandTot">0.00</span></th>
+                                    <th colspan="1"></th>
+                                </tr>
+                            </tfoot>
+                    </table>
+                    </div>
+
+                    <input id="checkLoyality" type="button" value="Check Loyality" class="submit-btn" onclick="showLoyaltyPoints();">
+                    <p id="overallOrder">Cost of the Overall order : LKR <span id="overallGtotal">0.00</span></p>
+                    <input id="placeOrder" type="button" value="Place Order" class="submit-btn">
+                    
+                </form>
+            </div> 
+
+            
+
+              
+            
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="donate-us">
+
+
+        <h1> Donate to help the animals at the Deihiwala Zoo. </h1>
+
+        <p>
+            We'll always be here to provide the beautiful wildlife at Dehiwala Zoo with the love and care they deserve,
+            but we want you to be a part of it as well to help us safeguard endangered species, to learn about these
+            amazing animals and their habitats, and to feel a true sense of connection to nature. 
+            Thousands of animals will benefit from your donations. </p>
+            <div class="donate-information">
+            <div class="row">
+            <div class="donate-us-col">
+                <img alt="zookeeper" src="images/zoo-keeperjpg.jpg">
+                <p> Provides financial support</p>
+                
+
+            </div>
+
+
+            <div class="donate-us-col">
+                <img  alt="education" src="images/education.jpg">
+                <p>Provides for education </p>
+
+            </div>
+
+            <div class="donate-us-col">
+                <img alt="wellfare" src="images/animal-wellfare.jpg">
+                <p>Ensures the health and well-being </p> 
+                
+
+            </div>
+
+            
+            </div>
+            </div>
+
+            <div class="donation-form">
+                <form action="" class="contact-col" id="frmDonation">
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <input type="email" id="email" placeholder="Enter your email" required >
+                    <textarea  rows="3" id="address" placeholder="Enter your address" required ></textarea>
+                    <label for="Donations" id="fixedDonations" class="lbdate">Select fixed Donation values from below list</label>
+                    <select name="language" class="custom-select" id="fixedDonatons" multiple >
+                        <option value="100">LKR 100 </option>
+                        <option value="500">LKR 500 </option>
+                        <option value="1000">LKR 1000 </option>
+                        <option value="2500">LKR 2500 </option>
+                        <option value="5000">LKR 5000 </option>
+                        
+                      </select>
+                    <textarea  rows="5" id="comment" placeholder="Donation Commment" required ></textarea>
+                    
+                </form>
+
+                <form class="paymentDetails" action=""  method="post" >
+                    <div class="inputBox">
+                        <span>Card number</span>
+                        <input type="text" id="cardNum" maxlength="16" class="card-number-input">
+                    </div>
+                    <div class="inputBox">
+                        <span>Card holder</span>
+                        <label for="cardholder"></label>
+                        <input type="text" id="cardHolder" class="card-holder-input">
+                    </div>
+
+                    
+                    <div class="flexbox">
+                        <div class="inputBox" >
+                            <span>expiration mm</span>
+                            <select name="" id="monthInput" class="month-input">
+                                <option value="month" selected disabled>Month</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="inputBox">
+                            <span>expiration yy</span>
+                            <select name="" id="yearInput" class="year-input" onselect="inputValidatiom()">
+                                <option value="year" selected disabled>Year</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>  
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                            </select>
+                        </div>
+                        <div class="inputBox" id="cvvInput">
+                            <span>cvv</span>
+                            <input type="text" id="cvv" maxlength="3" class="cvv-input" >
+                        </div>
+                    </div>
+                    <input type="button" value="Donate" id="donateBtn" class="submit-btn" onclick="inputValidation();">
+                </form>
+
+
+            </div> 
+            
+    </section>
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="container">
+            
+            <div class="about-dehiwala-zoo">
+                <h2>About Us</h2>
+                <p>A lush green sanctuary that is home to a variety of exotic animals, birds, and butterflies. It is one of Asia's oldest zoos,
+                     having opened in 1936 and been a pioneer of the open zoo concept.</p> 
+                <ul class="social-icons">
+                <li> <img src="images/instagram.png"  alt=""></li>
+                <li> <img src="images/facebook.png"  alt=""></li>
+                <li> <img src="images/youtube.png" alt=""></li>
+                <li> <img src="images/twitter.png"  alt=""></li>
+                </ul>
+            </div>
+    
+            <div class="quick-nav-links">
+    
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li> <a href="index.html">Home Page</a>  </li>
+                        <li> <a href="animals-plants.html">Animals and Plants</a>  </li>
+                        <li> <a href="activities.html">Activities</a>  </li>
+                        <li> <a href="purchase-and-donate.html">Purchase and Donate</a>  </li>
+                        <li> <a href="contact-us.html">Contact us</a>  </li>
+                        
+                    </ul>
+            </div>
+    
+    
+            <div class="contact">
+    
+                <h2>Contact Info</h2>
+                <ul>
+                    <li> 
+                        <img src="images/adress.png" width="40" height="40" alt="">
+                        <span class="adress-info"> 120 Galvihara Rd,<br> Dehiwala-Mount Lavinia</span>  
+                    </li>
+                    <li> 
+                        
+                         <img src="images/email.png" width="40" height="40" alt="">
+                         <a href="mailto:zoosl@slt.lk">zoosl@slt.lk</a>  
+                    </li>
+                    
+                    <li> 
+                         <img src="images/phone-call.png" width="40" height="40" alt="">
+                        <a href="tel:+94112712751"> +94-11-2712751 </a>
+                    </li>
+   
+                </ul>
+        </div>
+    
+    
+        </div>
+        <div class="footer-bottom">
+            &copy; Dehiwala Zoological Garden 2021. | All right reserved. | Design by Jayodya Methmal
+           
+       </div>
+
+<!------------------------------------------------------------------------------------------------------References--------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+    
+---------------------------------------Donation Section------------------------------------------------------------------------------
+zoo-keeperjpg.jpg -> Dudleyzoo (2017). Training new keepers – Dudley Zoo and Castle. [online] www.dudleyzoo.org.uk. Available at: https://www.dudleyzoo.org.uk/training-new-keepers/ [Accessed 4 Jan. 2022].      
+            
+animal-wellfare.jpg -> Largs and Millport News(2021). ZSL London Zoo holds annual animal weigh-in amid Covid-19 financial pressure. [online] Largs and Millport News. Available at: https://www.largsandmillportnews.com/news/national-news/18680365.zsl-london-zoo-holds-annual-animal-weigh-in-amid-covid-19-financial-pressure/ [Accessed 4 Jan. 2022].
+
+education.jpg -> OurAuckland (2019). Green shoots – fostering a sustainable future. [online] OurAuckland. Available at: https://ourauckland.aucklandcouncil.govt.nz/news/2019/09/green-shoots-fostering-a-sustainable-future/ [Accessed 9 Jan. 2022].
+
+       
+-------------------------------------------------------------------------------->
+       
+
+
+    </footer>
+
+
+
+
+    <script src="Javascript/main.js"> </script>
+
+
+    </body>
